@@ -35,9 +35,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  String city = '';
-  String temp = "";
-  String weather = "";
+  String city = "City";
+  String temp = "Temperature";
+  String weather = "Weather";
 
   // function that simulates fetching weather data
   void fetchWeather() {
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     int userTemp = 15 + random.nextInt(16);
 
     List<String> weatherTypes = ['Sunny', 'Cloudy', 'Rainy'];
-    String userWeather = weatherTypes[random.nextInt(2)];
+    String userWeather = weatherTypes[random.nextInt(3)];
 
     setState(() {
       city = userCity;
@@ -76,16 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             ElevatedButton(
-              onPressed: () {
-                // button pressed action
-              },
-              child: Text('Fetch Weather.'),
+              onPressed: fetchWeather,
+              child: Text('Fetch Weather'),
             ),
 
             // placeholders for weather data
-            Text("City", style: TextStyle(fontSize: 18)),
-            Text("temperature", style: TextStyle(fontSize: 18)),
-            Text("weather", style: TextStyle(fontSize: 18))
+            Text(city, style: TextStyle(fontSize: 18)),
+            Text(temp, style: TextStyle(fontSize: 18)),
+            Text(weather, style: TextStyle(fontSize: 18))
           ],
         ),
       ),

@@ -35,9 +35,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  String city = "City";
-  String temp = "Temperature";
-  String weather = "Weather";
+  String city = "";
+  String temp = "";
+  String weather = "";
 
   // function that simulates fetching weather data
   void fetchWeather() {
@@ -67,11 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a city name',
+            SizedBox(
+              width: 250,
+              child: TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a city name',
+                ),
               ),
             ),
 
@@ -81,9 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             // placeholders for weather data
-            Text(city, style: TextStyle(fontSize: 18)),
-            Text(temp, style: TextStyle(fontSize: 18)),
-            Text(weather, style: TextStyle(fontSize: 18))
+            Text("City: ${city}", style: TextStyle(fontSize: 18)),
+            Text("Temperature: ${temp}", style: TextStyle(fontSize: 18)),
+            Text("Weather: ${weather}", style: TextStyle(fontSize: 18))
           ],
         ),
       ),

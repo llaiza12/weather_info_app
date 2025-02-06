@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final TextEditingController _controller = TextEditingController();
+  String city = '';
+  String temp = "";
+  String weather = "";
+
+  // function that simulates fetching weather data
+  void fetchWeather() {
+    String userCity = _controller.text;
+
+    final random = Random();
+    int userTemp = 15 + random.nextInt(16);
+
+    List<String> weatherTypes = ['Sunny', 'Cloudy', 'Rainy'];
+    String userWeather = weatherTypes[random.nextInt(2)];
+
+    setState(() {
+      city = userCity;
+      temp = "$userTemp";
+      weather = userWeather;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextField(
+            TextField(
+              controller: _controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Enter a city name',

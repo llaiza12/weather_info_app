@@ -1,0 +1,88 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cw1",
+            "cwd": "cw1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cw1 (profile mode)",
+            "cwd": "cw1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "cw1 (release mode)",
+            "cwd": "cw1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "digital_pet_app",
+            "cwd": "digital_pet_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "digital_pet_app (profile mode)",
+            "cwd": "digital_pet_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "digital_pet_app (release mode)",
+            "cwd": "digital_pet_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "weather_info_app",
+            "cwd": "weather_info_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "weather_info_app (profile mode)",
+            "cwd": "weather_info_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "weather_info_app (release mode)",
+            "cwd": "weather_info_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ca1",
+            "cwd": "cw1\\ca1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ca1 (profile mode)",
+            "cwd": "cw1\\ca1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ca1 (release mode)",
+            "cwd": "cw1\\ca1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

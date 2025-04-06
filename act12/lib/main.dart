@@ -25,6 +25,14 @@ class InventoryHomePage extends StatefulWidget {
 }
 
 class _InventoryHomePageState extends State<InventoryHomePage> {
+  void _addItem() {}
+
+  Widget _buildListItem(BuildContext context, DocumentSnapshot itemName) {
+    return ListTile(
+      title: Row(children: [Expanded(child: Text(itemName['name']))]),
+    );
+  }
+
   // TODO: Implement Firestore integration
   @override
   Widget build(BuildContext context) {
@@ -35,14 +43,25 @@ class _InventoryHomePageState extends State<InventoryHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Inventory Management System'),
-            // TODO: Implement inventory list view
+            StreamBuilder(
+              stream: FirebaseFirestore.instance.collection('itemnames').snapshots(),
+              builder: (context, snapshot) {
+                return ListView.builder(
+                  itemExtent: 50.0,
+                  itemCount: snapshot.data.length,
+                  itemBuilder:
+                      (context, index) => _buildListItem(
+                        context,
+                        snapshot.data.[index],
+                      ),
+                );
+              },
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // TODO: Implement add inventory item
-        },
+        onPressed: _addItem,
         tooltip: 'Add Item',
         child: Icon(Icons.add),
       ),
